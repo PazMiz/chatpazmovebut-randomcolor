@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>ChatPAZGPT</title>
+    <center>
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+
+</head>
+
+<body>
+    <center>
+        <h4 style="color: green;">ChatPAZGPT</h4>
+    </center>
+
+    <div class="message">
+        <div class="chat-container">
+            <center>
+                <div class="chat-box"></div>
+            </center>
+            <form id="message-form">
+                <center><input type="text" id="message-input" placeholder="Type your message here..."></center>
+                <button id="send-button" onclick="displayGreeting()">Send your answer </button>
+
+                <div class="message-header">
+                </div>
+                <center>
+                    <p class="chat.css">Hello! How can I assist you today?</p>
+                </center>
+
+        </div>
+    </div id="color">
+
+    <button style="position: absolute" id="mvBtn" : aqua;>Catch paz if you can</button>
+
+    <button onclick="setRandomBackgroundColor()">Click here for paz random color </button>
+    <br>
+
+
+
+
+
+    <script>
+        // move button paz
+        // left: 100px;
+        // ;top: 100px;
+        let startW = 0
+        let startH = 0
+        let deltaW = 15
+        let deltaH = 10
+        function moveButton() {
+            startW += deltaW
+            startH += deltaH
+            mvBtn.style.left = startW + "px"
+            mvBtn.style.top = startH + "px"
+            if (startH > window.innerHeight - mvBtn.style.height || startH < 0) {
+                deltaH = -deltaH
+            }
+            if (startW > window.innerWidth - mvBtn.style.width || startW < 0) {
+                deltaW = -deltaW
+            }
+        }
+        setInterval(moveButton, 30)
+        // random color
+
+        function setRandomBackgroundColor() {
+            const red = Math.floor(Math.random() * 256);
+            const green = Math.floor(Math.random() * 256);
+            const blue = Math.floor(Math.random() * 256);
+            const color = `rgb(${red}, ${green}, ${blue})`;
+            document.body.style.backgroundColor = color;
+        }
+
+        setRandomBackgroundColor();
+        setInterval(setRandomBackgroundColor, 1000)
+
+        /////alert search
+
+        function displayGreeting() {
+            alert("what do you want to search?");
+        }
+
+
+        // שהאתר שלי יזכור את המידע גם אחרי רפרש להשתמש ב localstorage 
+
+
+        // אתר של שני דפים : דף ראשון לתת למשתמש לבחור צבע ואז שהוא עובר לדף השני הוא זוכר את הצבע
+
+
+
+        // תרגיל 2 : בדף הראשון שואל את השם של המשתמש ואז במעבר לדף השני הוא אומר לו ברוך הבא וזוכר עדיין את אותו שם
+
+    </script>
+
+</html>
